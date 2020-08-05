@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <!-- custom styles -->
+    <link rel="stylesheet" href="./assets/css/app.css">
+    <title>GetViral | Admin List</title>
+</head>
+<body>
+    
+    <!-- Start modals -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+    </button>
+    
+    <!-- First Modal start -->
+    <div class="modal fade modal1" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog dialog-1">
+        <div class="modal-content">
+            <div class="modal-header d-flex flex-column">
+                <div class="w-100 d-flex justify-content-end align-items-center px-3">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="text_larger" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="w-100 d-flex justify-content-between align-items-center px-3 px-md-5 py-3">
+                    <h5 class="modal-title pl-md-3 text_large font-weight-bold" id="exampleModalLabel">Admin</h5>
+                    <button class="edit-button hide-modal-1" data-toggle="modal" data-target="#deleteMember">
+                        <span class="text_normal text_red pr-2">Delete</span>
+                        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.42857 18.2778C1.42857 19.5 2.71429 20.5 4.28571 20.5H15.7143C17.2857 20.5 18.5714 19.5 18.5714 18.2778V4.94444H1.42857V18.2778ZM20 1.61111H15L13.5714 0.5H6.42857L5 1.61111H0V3.83333H20V1.61111Z" fill="#C4302B"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body pb-5">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-md-3 d-flex justify-content-center justify-content-md-end">
+                            <div class="img-wrapper position-relative">
+                                <div class="overlay-bg position-absolute">
+                                    <label for="profilePicture" class="position-absolute overlay-text text_light text_smaller m-0 text-center">
+                                            <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5.8125 3.20497H7.25586V9.81239C7.25586 9.89833 7.32617 9.96864 7.41211 9.96864H8.58398C8.66992 9.96864 8.74023 9.89833 8.74023 9.81239V3.20497H10.1875C10.3184 3.20497 10.3906 3.05458 10.3105 2.95302L8.12305 0.183486C8.10843 0.164811 8.08976 0.149707 8.06844 0.13932C8.04712 0.128933 8.02371 0.123535 8 0.123535C7.97629 0.123535 7.95288 0.128933 7.93156 0.13932C7.91024 0.149707 7.89157 0.164811 7.87695 0.183486L5.68945 2.95106C5.60938 3.05458 5.68164 3.20497 5.8125 3.20497ZM15.1484 9.22645H13.9766C13.8906 9.22645 13.8203 9.29677 13.8203 9.3827V12.3905H2.17969V9.3827C2.17969 9.29677 2.10938 9.22645 2.02344 9.22645H0.851562C0.765625 9.22645 0.695312 9.29677 0.695312 9.3827V13.2499C0.695312 13.5956 0.974609 13.8749 1.32031 13.8749H14.6797C15.0254 13.8749 15.3047 13.5956 15.3047 13.2499V9.3827C15.3047 9.29677 15.2344 9.22645 15.1484 9.22645Z" fill="white"/>
+                                            </svg>
+                                            Upload Image
+                                    </label>
+                                    <input type="file" name="profilePicture" accept="image/*" id="profilePicture">
+                                </div>
+                                <img id="profile-img" src="./assets/imgs/profile-image.png" alt="" class="img-fluid pb-3 pb-md-0 image-1 position-absolute">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-9 d-flex flex-column align-items-start justify-content-start">
+                            <div class="d-flex flex-row justify-content-between justify-content-md-start align-items-end w-100">
+                                <div class="d-flex align-items-sm-end flex-column flex-sm-row">
+                                    <input type="text" name="ProfileName" id="profileName" value="Tom Paul" class="text_large text_primary details-input">
+                                    <label for="profileName" class="profileName m-0 mb-2">
+                                        <button class="edit-button name-edit ml-sm-4">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 9.50035V12H2.49965L9.87196 4.62769L7.37231 2.12804L0 9.50035ZM11.805 2.69463C12.065 2.43466 12.065 2.01472 11.805 1.75476L10.2452 0.194973C9.98528 -0.064991 9.56534 -0.064991 9.30537 0.194973L8.08554 1.4148L10.5852 3.91446L11.805 2.69463Z" fill="#362F74"/>
+                                            </svg> 
+                                            <span class="text_small text_primary pl-1">Edit</span>
+                                        </button>
+                                    </label>
+                                </div>
+                                <div class="d-flex d-md-none flex-column align-items-end balance-wrap">
+                                    <p class="balance text_small mb-1">Current Balance</p> <span id="currentBalance" class="text_normal">$17,000</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row w-100 pr-0">
+                                <div class="col-12 col-md-8 pr-0">
+                                    <div class="pb-3 pt-3 pb-lg-4">
+                                        <p class="text_normal text_primary m-0">Date Added: <time class="text_secondary pl-3">12 July 2020</time></p>
+                                    </div>
+                                    <div class="d-flex align-items-center pb-3 pb-lg-4">
+                                        <p class="text_normal text_primary m-0 pr-1">Emai:</p>
+                                        <div class="d-flex flex-row-reverse justify-content-end align-items-center w-100 text-right">
+                                            <label for="email" class="email m-0 w-sm-100">
+                                                <button class="edit-button email-edit ml-sm-4">
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0 9.50035V12H2.49965L9.87196 4.62769L7.37231 2.12804L0 9.50035ZM11.805 2.69463C12.065 2.43466 12.065 2.01472 11.805 1.75476L10.2452 0.194973C9.98528 -0.064991 9.56534 -0.064991 9.30537 0.194973L8.08554 1.4148L10.5852 3.91446L11.805 2.69463Z" fill="#362F74"/>
+                                                    </svg> 
+                                                    <span class="text_small text_primary pl-1">Edit</span>
+                                                </button>
+                                            </label>
+                                            <input type="text" name="email" id="email" value="ogd@gmail.com" class="text_secondary text_normal details-input w-sm-75">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center pb-3 pb-lg-4">
+                                        <p class="text_normal text_primary m-0 pr-2">Password:</p>
+                                        <input type="password" name="password" id="password" value="12345678999887" class="text_secondary text_normal details-input w-25">
+                                        <button class="edit-button hide-modal-1 w-sm-100 pr-0 text-right" data-toggle="modal" data-target="#resetPassword">
+                                            <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8.5 12C9.68669 12 10.8467 11.6481 11.8334 10.9888C12.8201 10.3295 13.5891 9.39246 14.0433 8.2961C14.4974 7.19975 14.6162 5.99335 14.3847 4.82946C14.1532 3.66557 13.5818 2.59648 12.7426 1.75736C11.9035 0.918247 10.8344 0.346802 9.67054 0.115291C8.50665 -0.11622 7.30025 0.00259972 6.2039 0.456725C5.10754 0.910851 4.17047 1.67989 3.51118 2.66658C2.85189 3.65328 2.5 4.81331 2.5 6V9.1L0.7 7.3L0 8L3 11L6 8L5.3 7.3L3.5 9.1V6C3.5 5.0111 3.79324 4.0444 4.34265 3.22215C4.89206 2.39991 5.67295 1.75904 6.58658 1.3806C7.50021 1.00217 8.50554 0.90315 9.47545 1.09608C10.4454 1.289 11.3363 1.76521 12.0355 2.46447C12.7348 3.16373 13.211 4.05465 13.4039 5.02455C13.5968 5.99445 13.4978 6.99979 13.1194 7.91342C12.741 8.82705 12.1001 9.60794 11.2778 10.1573C10.4556 10.7068 9.4889 11 8.5 11V12Z" fill="#362F74"/>
+                                            </svg>                                            
+                                            <span class="text_small text_primary pl-1">Reset Password</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-4 pt-2 d-none d-md-flex flex-column align-items-end">
+                                    <p class="balance text_small mb-1">Current Balance</p> <span id="currentBalance" class="text_normal">$17,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- First Modal ends -->
+
+    <!-- Reset Password Modal -->
+    <div class="modal fade" id="resetPassword" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal_sm">
+        <div class="modal-content">
+            <div class="modal-header d-flex flex-column">
+                <div class="w-100 d-flex justify-content-end align-items-center px-3">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="text_larger view1 font-weight-light" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="w-100 text-center">
+                    <h3 class="text_caption">Reset Password</h3>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group px-3">
+                      <input type="password" id="changePassword" required placeholder="Enter New Password" class="form-control text_smaller modal-input">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-center pb-4">
+                <button id="resetButton" class="bg_primary mr-3 ml-4 view1" data-dismiss="modal" aria-label="Close">
+                    <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 0.5H2C1.46957 0.5 0.960859 0.710714 0.585786 1.08579C0.210714 1.46086 0 1.96957 0 2.5V14.5C0 15.0304 0.210714 15.5391 0.585786 15.9142C0.960859 16.2893 1.46957 16.5 2 16.5H11.09C11.03 16.17 11 15.84 11 15.5C11 12.19 13.69 9.5 17 9.5C18.06 9.5 19.09 9.78 20 10.31V2.5C20 1.39 19.11 0.5 18 0.5ZM18 7.5H2V4.5H18V7.5ZM21 14.5V16.5H13V14.5H21Z" fill="white"/>
+                    </svg>
+                    <span class="pl-3 text_small text_light">Reset</span> 
+                </button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- end modal -->
+
+
+
+    <!-- delete member modal -->
+    <div class="modal fade" id="deleteMember" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal_sm">
+        <div class="modal-content">
+            <div class="modal-header d-flex flex-column">
+                <div class="w-100 d-flex justify-content-end align-items-center px-3">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="text_larger view1 font-weight-light" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="w-100 text-center pt-3">
+                    <h3 class="text_caption">Are you  sure you want to delete memeber?</h3>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center pb-4">
+                <button class="bg_primary mr-3 ml-4 hide-modal-1" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#saveChange">
+                    <span class="text_small text_light">Yes</span> 
+                </button>
+                <button class="bg_light btn-no mr-3 ml-4 view1" data-dismiss="modal" aria-label="Close">
+                    <span class="text_small text_primary">No</span> 
+                </button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- end modal -->
+
+
+    <!-- save changes modal -->
+    <div class="modal fade" id="saveChange" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal_sm">
+        <div class="modal-content">
+            <div class="modal-header d-flex flex-column">
+                <div class="w-100 d-flex justify-content-end align-items-center px-3">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="text_larger view1 font-weight-light" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="w-100 text-center pt-3">
+                    <h3 class="text_caption">Do you want to save Changes</h3>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center pb-4">
+                <button class="bg_primary mr-3 ml-4 view1" data-dismiss="modal" aria-label="Close">
+                    <span class="text_small text_light">Yes</span> 
+                </button>
+                <button class="bg_light btn-no mr-3 ml-4 view1" data-dismiss="modal" aria-label="Close">
+                    <span class="text_small text_primary">No</span> 
+                </button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- end modal -->
+
+    <!-- End Modals -->
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- popper -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <!-- boostrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
+    <!-- custom js -->
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>

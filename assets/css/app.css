@@ -1,0 +1,206 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+/* variables */
+:root{
+    --primary: #362f74;
+    --secondary: #828282;
+    --red: #c4302b;
+    --light: #fff;
+}
+.text_larger{
+    font-size: 3rem;
+}
+.text_large{
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+.text_caption{
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+}
+.text_normal{
+    font-size: 1.25rem;
+    line-height: 1.563rem;
+}
+.text_small{
+    font-size: 1.125rem;
+    line-height: 1.438rem;
+}
+.text_smaller{
+    font-size: 1rem;
+    line-height: 1.25rem;
+}
+.text_primary{
+    color: var(--primary);
+}
+.text_secondary{
+    color: var(--secondary);
+}
+.text_light{
+    color: var(--light);
+}
+.text_red{
+    color: var(--red);
+}
+.bg_primary{
+    background-color: var(--primary);
+}
+.bg_red{
+    background-color: var(--red);
+}
+.bg_light{
+    background-color: var(--light);
+}
+hr{
+    border-top: 1px solid #c4c4c4;
+    width: 100%;
+}
+/* modal styling */
+@media (min-width: 576px){
+    .dialog-1 {
+        max-width: 1060px !important;
+    }
+}
+.modal-1{
+    z-index: 200;
+}
+.modal-header{
+    border-bottom: 0;
+}
+.modal-footer{
+    border-top: 0;
+}
+.modal-footer button{
+    padding: 1rem 2rem;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+}
+.img-wrapper{
+    width: 180px;
+    height: 180px;
+}
+.overlay-bg{
+    background: rgba(54, 47, 116, 0.85);
+    border-radius: 7.59px;
+    z-index: 9;
+    opacity: 0;
+    transition: opacity .5s ease;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.overlay-bg:hover{
+    opacity: 1;
+}
+.overlay-bg:hover{
+    display: block;
+}
+#profile-img{
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.overlay-text{
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+.edit-button{
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+.edit-button:active,
+.edit-button:focus{
+    border: 0;
+    outline: none;
+}
+.balance{
+    text-decoration: underline;
+    color: #1582FC;
+}
+.modal-input{
+    background-color: rgba(54, 47, 116, 0.05);
+    border: none;
+    padding: 1.5rem 1rem;
+}
+.modal-content .btn-no{
+    border: 1px solid var(--primary);
+}
+.details-input{
+    border: 0;
+    outline: 0;
+    pointer-events: none;
+}
+#profileName{
+    width: 30%;
+}
+.edit{
+    border-bottom: 1px solid var(--primary);
+    pointer-events: all;
+}
+input[type=file]{
+    opacity: 0;
+    cursor: pointer;
+}
+label[for=profilePicture]{
+    cursor: pointer;
+}
+@media screen and (max-width:990px){
+    .text_normal{
+        font-size: 1.125rem;
+    }
+}
+@media screen and (max-width: 767px){
+    .text_normal{
+        font-size: 1.25rem;
+    }
+    #profileName{
+        width: 45%;
+    }
+    .balance-wrap{
+        flex-basis: 45%;
+    }
+}
+@media screen and (max-width: 575px){
+    #profileName{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 500px){
+    .text_large{
+        font-size: 1.5rem;
+    }
+    .text_normal{
+        font-size: 1rem;
+    }
+    .text_small{
+        font-size: .7rem;
+        line-height: 1rem;
+    }
+    .modal-footer button{
+        padding: .5rem 1rem;
+    }
+    .modal_sm{
+        max-width: 300px !important;
+        margin: 0 auto !important;
+    }
+}
+@media screen and (max-width: 370px){
+    .text_large{
+        font-size: 1.25rem;
+    }
+    .text_normal{
+        font-size: .9rem;
+    }
+}
